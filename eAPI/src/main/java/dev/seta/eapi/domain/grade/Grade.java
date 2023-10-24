@@ -1,4 +1,4 @@
-package dev.seta.eapi.domain.noten;
+package dev.seta.eapi.domain.grade;
 
 import dev.seta.eapi.domain.users.Student;
 import jakarta.persistence.*;

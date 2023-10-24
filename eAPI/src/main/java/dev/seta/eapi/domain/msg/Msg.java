@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.sql.Date;
+import java.time.LocalDateTime;
 
 @Entity
 @Builder
@@ -21,12 +22,12 @@ public class Msg {
 
     private String text;
 
-    @ManyToOne
+    @OneToOne
     private Teacher teacher;
 
-    @ManyToOne
+    @OneToOne
     private Student student;
 
-    private Date date;
+    private LocalDateTime dateCreated;
 
 }

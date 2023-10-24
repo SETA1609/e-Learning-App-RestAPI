@@ -1,7 +1,7 @@
 package dev.seta.eapi.domain.modul;
 
-import dev.seta.eapi.domain.kurz.Course;
-import dev.seta.eapi.domain.noten.Grade;
+import dev.seta.eapi.domain.course.Course;
+import dev.seta.eapi.domain.grade.Grade;
 import dev.seta.eapi.domain.users.Teacher;
 import jakarta.persistence.*;
 import lombok.*;
@@ -24,8 +24,9 @@ public class Module {
     private String name;
     private String description;
 
-    @ManyToMany
-    private Set<Teacher> teacherSet;
+    @ManyToOne
+    @JoinColumn(name = "teacher_id")
+    private Teacher teacher;
 
     @ManyToOne
     @JoinColumn(name = "course_id")
