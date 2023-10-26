@@ -20,13 +20,15 @@ public class Msg {
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
-    private String text;
+    private String Content;
 
-    @OneToOne
-    private Teacher teacher;
-
-    @OneToOne
+    @ManyToOne
+    @JoinColumn(name = "student_id")
     private Student student;
+
+    @ManyToOne
+    @JoinColumn(name = "teacher_id")
+    private Teacher teacher;
 
     private LocalDateTime dateCreated;
 

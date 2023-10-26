@@ -6,17 +6,16 @@ import dev.seta.eapi.domain.users.Teacher;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.List;
-import java.util.Set;
-
 @Entity
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class Module {
+@Table
+public class ModulE {
 
+    @NonNull
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
@@ -25,13 +24,15 @@ public class Module {
     private String description;
 
     @ManyToOne
-    @JoinColumn(name = "teacher_id")
+    @JoinColumn(name = "teacher_d")
     private Teacher teacher;
 
     @ManyToOne
     @JoinColumn(name = "course_id")
     private Course course;
 
-    @OneToMany(mappedBy = "module")
-    private List<Grade> grades;
+    @OneToOne(mappedBy = "module")
+    private Grade grade;
+
+
 }

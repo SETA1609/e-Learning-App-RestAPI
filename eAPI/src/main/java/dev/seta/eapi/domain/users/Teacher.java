@@ -1,14 +1,13 @@
 package dev.seta.eapi.domain.users;
 
 import dev.seta.eapi.domain.course.Course;
-import dev.seta.eapi.domain.modul.Module;
+import dev.seta.eapi.domain.modul.ModulE;
 import dev.seta.eapi.domain.msg.Msg;
 import dev.seta.eapi.domain.ticket.Ticket;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @DiscriminatorValue("TEACHER")
@@ -22,12 +21,12 @@ public class Teacher extends MyUser{
     private List<Course> courses;
 
     @OneToMany(mappedBy = "teacher")
-    private List<Module> modules;
+    private List<ModulE> modulES;
 
-    @OneToOne
-    private Ticket ticket;
+    @OneToMany(mappedBy = "teacher")
+    private List<Ticket> sentTickets;
 
-    @OneToOne
-    private Msg msg;
+    @OneToMany(mappedBy = "teacher")
+    private List<Msg> receivedMessages;
 
 }

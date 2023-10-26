@@ -1,6 +1,7 @@
 package dev.seta.eapi.domain.ticket;
 
 import dev.seta.eapi.domain.users.Admin;
+import dev.seta.eapi.domain.users.Student;
 import dev.seta.eapi.domain.users.Teacher;
 import jakarta.persistence.*;
 import lombok.*;
@@ -20,13 +21,15 @@ public class Ticket {
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
-    private String text;
+    private String content;
 
-    @OneToOne
-    private Teacher teacher;
-
-    @OneToOne
+    @ManyToOne
+    @JoinColumn(name = "admin_id")
     private Admin admin;
+
+    @ManyToOne
+    @JoinColumn(name = "teacher_id")
+    private Teacher teacher;
 
     private LocalDateTime dateCreated;
 

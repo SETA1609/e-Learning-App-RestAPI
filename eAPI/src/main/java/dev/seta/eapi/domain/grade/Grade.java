@@ -1,5 +1,6 @@
 package dev.seta.eapi.domain.grade;
 
+import dev.seta.eapi.domain.modul.ModulE;
 import dev.seta.eapi.domain.users.Student;
 import jakarta.persistence.*;
 import lombok.*;
@@ -10,9 +11,11 @@ import lombok.*;
 @NoArgsConstructor
 @Getter
 @Setter
+@Table
 public class Grade {
 
     @Id
+    @NonNull
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
@@ -22,7 +25,7 @@ public class Grade {
     @JoinColumn(name = "student_id")
     private Student student;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "module_id")
-    private Module module;
+    private ModulE module;
 }

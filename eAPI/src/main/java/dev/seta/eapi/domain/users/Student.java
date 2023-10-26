@@ -1,6 +1,7 @@
 package dev.seta.eapi.domain.users;
 
 import dev.seta.eapi.domain.grade.Grade;
+import dev.seta.eapi.domain.msg.Msg;
 import dev.seta.eapi.domain.review.Review;
 import jakarta.persistence.*;
 import lombok.*;
@@ -23,4 +24,9 @@ public class Student extends MyUser{
     private List<Grade> grades;
 
 
+    @OneToMany(mappedBy = "student")
+    private List<Msg> sentMessages;
+/*
+TODO here should be the payment method saved and a relationship to a new entity named certifications
+ */
 }

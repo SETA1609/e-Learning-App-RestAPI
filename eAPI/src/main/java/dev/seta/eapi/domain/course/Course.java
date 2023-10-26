@@ -1,12 +1,12 @@
 package dev.seta.eapi.domain.course;
 
-import dev.seta.eapi.domain.modul.Module;
+import dev.seta.eapi.domain.modul.ModulE;
 import dev.seta.eapi.domain.users.Teacher;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.List;
-import java.util.Set;
+
 @Entity
 @Builder
 @AllArgsConstructor
@@ -32,7 +32,7 @@ public class Course {
     private Teacher teacher;
 
     @OneToMany(mappedBy = "course")
-    private List<Module> modules;
+    private List<ModulE> modulES;
 
 
 }
