@@ -1,5 +1,6 @@
 # day 21.10.23
 - Initial commit: project was created in github.
+- Uml diagram was made to have a first view of the project (This will change in the dev cycle as needed) 
 
 # day 22.10.23
 - First commit: Springboot project was initialized with some profiles.
