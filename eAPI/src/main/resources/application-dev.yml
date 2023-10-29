@@ -11,6 +11,9 @@ spring:
     user:
       name: user
       password: 1234
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
 server:
   port: 8081
 logging:
