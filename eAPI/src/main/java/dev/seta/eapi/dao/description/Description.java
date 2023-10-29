@@ -7,6 +7,8 @@ import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.*;
 
+import javax.validation.constraints.AssertTrue;
+
 @Entity
 @Builder
 @AllArgsConstructor
@@ -37,5 +39,10 @@ public class Description {
     @ManyToOne
     @JoinColumn(name = "unit_id")
     private Unit unit;
+
+    @AssertTrue(message = "At least one object (Course, MyModule, Unit) must be provided.")
+    private boolean isAtLeastOneObjectNotNull() {
+        return course != null || myModule != null || unit != null;
+    }
 
 }

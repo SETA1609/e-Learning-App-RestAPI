@@ -18,7 +18,7 @@
 - It was found that the table annotation from lombok is not working at the moment sql schema should be manually given in.
 
 # day 27.10.23
-- I wasnt in the best condition and started doing dtos for the future requests
+- I wasn't in the best condition and started doing dtos for the future requests
 
 # day 29.10.23
 - new profiles were set (qa) and the dll create-drop was implemented in the meantime.
@@ -26,3 +26,6 @@
 - repositories were packed with their entities.
 - description for myModules, courses and units were encapsulated in a new entity that would have the description in the three selected languages (DE, ES, EN)
 - Dtos were continued now there are some dtos for creating new entries
+- services were declared
+- Todo list was started
+- Controllers were declared
