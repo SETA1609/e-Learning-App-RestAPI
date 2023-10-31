@@ -13,7 +13,8 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table
-@Data
+@Setter
+@Getter
 public class Course {
 
     @Id
