@@ -14,6 +14,8 @@
 - implement CI/CD with jenkins
 - check if kafka is needed
 - define the other profiles
+- pack everything to a container for the frontend development phase
+- test rest implementation in postman
 
 -----
 

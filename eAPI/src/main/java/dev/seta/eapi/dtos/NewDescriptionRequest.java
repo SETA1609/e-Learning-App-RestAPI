@@ -1,14 +1,14 @@
 package dev.seta.eapi.dtos;
 
-import dev.seta.eapi.dao.course.Course;
-import dev.seta.eapi.dao.myModule.MyModule;
-import dev.seta.eapi.dao.unit.Unit;
+import dev.seta.eapi.domains.course.Course;
+import dev.seta.eapi.domains.myModule.MyModule;
+import dev.seta.eapi.domains.unit.Unit;
 import javax.validation.constraints.AssertTrue;
 
 import java.io.Serializable;
 
 /**
- * DTO for {@link dev.seta.eapi.dao.description.Description}
+ * DTO for {@link dev.seta.eapi.domains.description.Description}
  */
 public record NewDescriptionRequest(
         String language,

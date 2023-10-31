@@ -1,13 +1,13 @@
 package dev.seta.eapi.dtos;
 
-import dev.seta.eapi.dao.users.admin.Admin;
-import dev.seta.eapi.dao.users.teacher.Teacher;
+import dev.seta.eapi.domains.users.admin.Admin;
+import dev.seta.eapi.domains.users.teacher.Teacher;
 import lombok.NonNull;
 
 import java.io.Serializable;
 
 /**
- * DTO for {@link dev.seta.eapi.dao.ticket.Ticket}
+ * DTO for {@link dev.seta.eapi.domains.ticket.Ticket}
  */
 public record NewTicketRequest(
         @NonNull

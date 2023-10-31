@@ -29,3 +29,11 @@
 - services were declared
 - Todo list was started
 - Controllers were declared
+
+# day 31.10.23
+- sick day
+- exceptions package was made and some exceptions were defined and declared
+- Controller annotations were given with a - as placeholder for the role and id of the user
+
+---------
+
