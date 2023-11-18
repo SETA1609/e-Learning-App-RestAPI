@@ -16,6 +16,7 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
+@Builder
 public class Teacher extends MyUser {
 
     @OneToMany(mappedBy = "teacher")
@@ -24,10 +25,5 @@ public class Teacher extends MyUser {
     @OneToMany(mappedBy = "teacher")
     private List<MyModule> myModules;
 
-    @OneToMany(mappedBy = "teacher")
-    private List<Ticket> sentTickets;
-
-    @OneToMany(mappedBy = "teacher")
-    private List<Msg> receivedMessages;
 
 }

@@ -13,9 +13,9 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
+@Builder
 public class Admin extends MyUser {
 
-    @OneToMany(mappedBy = "admin")
-    private List<Ticket> receivedTickets;
+
 
 }

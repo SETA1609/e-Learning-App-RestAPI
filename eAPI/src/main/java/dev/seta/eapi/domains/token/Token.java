@@ -17,6 +17,9 @@ public class Token {
     @GeneratedValue
     private Integer id;
 
+    @Version
+    private int version;
+
     @Column(unique = true)
     private String token;
 

@@ -15,6 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
+@Builder
 public class Student extends MyUser {
 
     @OneToOne()
@@ -25,8 +26,6 @@ public class Student extends MyUser {
     private List<Grade> grades;
 
 
-    @OneToMany(mappedBy = "student")
-    private List<Msg> sentMessages;
 /*
 TODO here should be the payment method saved and a relationship to a new entity named certifications
  */

@@ -19,6 +19,18 @@ public class Ticket {
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
+    @Version
+    private int version;
+
+    @NonNull
+    private TicketPriority ticketPriority;
+
+    @NonNull
+    private TicketStatus ticketStatus;
+
+    @NonNull
+    private TicketType ticketType;
+
     private String content;
 
     @ManyToOne

@@ -29,6 +29,13 @@ public class MyUser implements UserDetails {
     @Column(unique = true)
     private String username;
 
+    private String firstname;
+
+    private String lastname;
+
+    @Version
+    private int version;
+
     private String email;
 
     @Lob

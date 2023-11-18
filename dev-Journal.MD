@@ -37,3 +37,9 @@
 
 ---------
 
+# day 18.11.23
+- coming back in project
+- ticket response and new request were worked on 
+- ticket entity was change to have enums for status, type and priority
+- ticket and msg are going to be fetched through direct queries now
+- starting migrating a previous spring security application

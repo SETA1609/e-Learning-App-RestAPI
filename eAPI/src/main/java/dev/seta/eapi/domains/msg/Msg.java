@@ -19,6 +19,9 @@ public class Msg {
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
+    @Version
+    private int version;
+
     private String Content;
 
     @ManyToOne

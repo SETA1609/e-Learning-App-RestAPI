@@ -21,6 +21,9 @@ public class Course {
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
+    @Version
+    private int version;
+
     private String name;
 
     @ManyToOne

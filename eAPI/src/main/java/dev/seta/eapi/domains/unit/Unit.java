@@ -17,9 +17,11 @@ public class Unit {
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
+    @Version
+    private int version;
+
     private String name;
 
-    private List<String> subjects;
 
     @OneToMany(mappedBy = "unit")
     private List<Description> description;

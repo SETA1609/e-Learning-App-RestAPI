@@ -3,6 +3,7 @@ package dev.seta.eapi.domains.myModule;
 import dev.seta.eapi.domains.description.Description;
 import dev.seta.eapi.domains.course.Course;
 import dev.seta.eapi.domains.grade.Grade;
+import dev.seta.eapi.domains.unit.Unit;
 import dev.seta.eapi.domains.users.teacher.Teacher;
 import jakarta.persistence.*;
 import lombok.*;
@@ -23,9 +24,12 @@ public class MyModule {
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
+    @Version
+    private int version;
+
     private String name;
     @ManyToOne
-    @JoinColumn(name = "teacher_id")
+    @JoinColumn(name = "id")
     private Teacher teacher;
 
     @ManyToOne
@@ -37,4 +41,7 @@ public class MyModule {
 
     @OneToMany(mappedBy = "myModule")
     private List<Description> description;
+
+    @OneToMany
+    private List<Unit> unitList;
 }

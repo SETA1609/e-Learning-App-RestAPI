@@ -21,6 +21,10 @@ public class Description {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
+
+    @Version
+    private int version;
+
     @Enumerated(
             EnumType.STRING
     )
@@ -42,9 +46,5 @@ public class Description {
     @JoinColumn(name = "unit_id")
     private Unit unit;
 
-    @AssertTrue(message = "At least one object (Course, MyModule, Unit) must be provided.")
-    private boolean isAtLeastOneObjectNotNull() {
-        return course != null || myModule != null || unit != null;
-    }
 
 }
