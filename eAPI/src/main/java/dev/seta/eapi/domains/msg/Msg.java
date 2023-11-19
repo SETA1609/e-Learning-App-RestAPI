@@ -13,10 +13,12 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Getter
 @Setter
+@Table
 public class Msg {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(name = "msgId")
     private String id;
 
     @Version
@@ -24,12 +26,14 @@ public class Msg {
 
     private String Content;
 
-    @ManyToOne
-    @JoinColumn(name = "student_id")
-    private Student student;
 
     @ManyToOne
-    @JoinColumn(name = "teacher_id")
+    @JoinColumn(name = "student_my_user_id")
+    private Student student;
+
+
+    @ManyToOne
+    @JoinColumn(name = "teacher_my_user_id")
     private Teacher teacher;
 
     private LocalDateTime dateCreated;

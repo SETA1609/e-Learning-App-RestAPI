@@ -1,6 +1,7 @@
 package dev.seta.eapi.domains.users;
 
 import dev.seta.eapi.domains.token.Token;
+import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
@@ -14,7 +15,7 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-@Builder
+@Builder(builderMethodName = "myUserBuilder")
 @AllArgsConstructor
 @NoArgsConstructor
 @Table
@@ -24,25 +25,30 @@ public class MyUser implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
+    private String myUserId;
 
     @Column(unique = true)
     private String username;
 
+    @Nullable
     private String firstname;
 
+    @Nullable
     private String lastname;
 
     @Version
     private int version;
 
+    @Column(unique = true)
     private String email;
 
+
     @Lob
-    @Column(columnDefinition = "LONGBLOB")
+    @Column(name = "image", columnDefinition = "bytea")
     private byte[] image;
 
 
+    @NonNull
     private String password;
 
 
@@ -54,19 +60,19 @@ public class MyUser implements UserDetails {
     @OneToMany(mappedBy = "myUser")
     private List<Token> tokens;
 
-    public MyUser(String username){
+    public MyUser(String username) {
         this.username = username;
 
     }
 
-
-    public String getImage(){
+/*
+    public String getImage() {
         return image != null ? Base64.getEncoder().encodeToString(image) : "";
     }
-
+*/
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of (new SimpleGrantedAuthority(role.name ()));
+        return List.of(new SimpleGrantedAuthority(role.name()));
     }
 
     @Override
@@ -94,11 +100,11 @@ public class MyUser implements UserDetails {
         if (this == o) return true;
         if (!(o instanceof MyUser myUser)) return false;
 
-        return getId().equals(myUser.getId());
+        return getMyUserId().equals(myUser.getMyUserId());
     }
 
     @Override
     public int hashCode() {
-        return getId().hashCode();
+        return getMyUserId().hashCode();
     }
 }

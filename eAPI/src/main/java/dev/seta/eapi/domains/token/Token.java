@@ -15,6 +15,7 @@ public class Token {
 
     @Id
     @GeneratedValue
+    @Column(name = "tokenId")
     private Integer id;
 
     @Version
@@ -31,7 +32,7 @@ public class Token {
     private boolean expired;
 
     @ManyToOne
-    @JoinColumn(name = "myUser_id")
+    @JoinColumn(name = "myUserId")
     private MyUser myUser;
 
 }

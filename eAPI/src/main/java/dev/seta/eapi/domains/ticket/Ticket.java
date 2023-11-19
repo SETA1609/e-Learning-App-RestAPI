@@ -13,10 +13,12 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Getter
 @Setter
+@Table(name = "ticket")
 public class Ticket {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(name = "ticketId")
     private String id;
 
     @Version
@@ -34,11 +36,11 @@ public class Ticket {
     private String content;
 
     @ManyToOne
-    @JoinColumn(name = "admin_id")
+    @JoinColumn(name = "adminId")
     private Admin admin;
 
     @ManyToOne
-    @JoinColumn(name = "teacher_id")
+    @JoinColumn(name = "teacherId")
     private Teacher teacher;
 
     private LocalDateTime dateCreated;

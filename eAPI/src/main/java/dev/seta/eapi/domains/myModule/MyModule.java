@@ -22,18 +22,20 @@ public class MyModule {
     @NonNull
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(name = "myModuleId")
     private String id;
 
     @Version
     private int version;
 
     private String name;
+
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "myUserId")
     private Teacher teacher;
 
     @ManyToOne
-    @JoinColumn(name = "course_id")
+    @JoinColumn(name = "courseId")
     private Course course;
 
     @OneToOne

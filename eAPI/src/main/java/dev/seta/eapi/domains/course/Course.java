@@ -19,6 +19,7 @@ public class Course {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(name = "courseId")
     private String id;
 
     @Version
@@ -27,7 +28,7 @@ public class Course {
     private String name;
 
     @ManyToOne
-    @JoinColumn(name = "teacher_id")
+    @JoinColumn(name = "teacherId")
     private Teacher teacher;
 
     @OneToMany(mappedBy = "course")

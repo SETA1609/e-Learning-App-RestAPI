@@ -8,7 +8,7 @@ import dev.seta.eapi.domains.users.MyUser;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.List;
+import java.util.Set;
 
 @Entity
 @DiscriminatorValue("TEACHER")
@@ -16,14 +16,20 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-@Builder
+@Builder(builderMethodName = "teacherBuilder")
 public class Teacher extends MyUser {
 
     @OneToMany(mappedBy = "teacher")
-    private List<Course> courses;
+    private Set<Course> courses;
 
     @OneToMany(mappedBy = "teacher")
-    private List<MyModule> myModules;
+    private Set<MyModule> myModules;
+
+    @OneToMany(mappedBy = "teacher")
+    private Set<Msg> receivedMsg;
+
+    @OneToMany(mappedBy = "teacher")
+    private Set<Ticket> sentTicket;
 
 
 }

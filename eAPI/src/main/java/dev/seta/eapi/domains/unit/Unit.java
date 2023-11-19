@@ -12,9 +12,11 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
+@Table
 public class Unit {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(name = "unitId")
     private String id;
 
     @Version

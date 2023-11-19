@@ -10,10 +10,12 @@ import lombok.*;
 @NoArgsConstructor
 @Getter
 @Setter
+@Table
 public class Review {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(name = "reviewId")
     private String id;
 
     @Version
@@ -25,7 +27,7 @@ public class Review {
 
 
     @OneToOne(mappedBy = "review")
-    @JoinColumn(name = "student_id")
+    @JoinColumn(name = "myUserId")
     private Student student;
 
 }

@@ -20,6 +20,7 @@ public class Description {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(name = "descriptionId")
     private String id;
 
     @Version
@@ -33,17 +34,17 @@ public class Description {
 
     @Nullable
     @ManyToOne
-    @JoinColumn(name = "course_id")
+    @JoinColumn(name = "courseId")
     private Course course;
 
     @Nullable
     @ManyToOne
-    @JoinColumn(name = "module_id")
+    @JoinColumn(name = "moduleId")
     private MyModule myModule;
 
     @Nullable
     @ManyToOne
-    @JoinColumn(name = "unit_id")
+    @JoinColumn(name = "unitId")
     private Unit unit;
 
 

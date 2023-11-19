@@ -5,17 +5,18 @@ import dev.seta.eapi.domains.users.MyUser;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.List;
+import java.util.Set;
 
 @Entity
 @DiscriminatorValue("ADMIN")
-@AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @Setter
-@Builder
+@Builder(builderMethodName = "adminBuilder")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Admin extends MyUser {
 
-
+    @OneToMany(mappedBy ="admin")
+    private Set<Ticket> receivedTicket;
 
 }

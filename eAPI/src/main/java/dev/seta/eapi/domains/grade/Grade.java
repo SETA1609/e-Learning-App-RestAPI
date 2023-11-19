@@ -17,6 +17,7 @@ public class Grade {
     @Id
     @NonNull
     @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(name = "gradeId")
     private String id;
 
     @Version
@@ -25,7 +26,7 @@ public class Grade {
     private double score;
 
     @ManyToOne
-    @JoinColumn(name = "student_id")
+    @JoinColumn(name = "myUserId")
     private Student student;
 
    @OneToOne(mappedBy = "grade")
